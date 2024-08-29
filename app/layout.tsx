@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Header from "@/components/Header";
+import PromptInput from "@/components/PromptInput";
 
 export const metadata: Metadata = {
   title: "AI-Image-Generator",
@@ -16,7 +15,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <Header />
+
+        <PromptInput />
+
+        {/* Page content */}
+        {children}
+      </body>
     </html>
   );
 }
