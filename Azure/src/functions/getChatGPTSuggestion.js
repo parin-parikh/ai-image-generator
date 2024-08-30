@@ -9,10 +9,10 @@ app.http('getChatGPTSuggestion', {
         model: 'gpt-3.5-turbo',
         messages: [
             { role: 'system', content: 'You are an assistant that generates prompts for DALL·E.' },
-            { role: 'user', content: 'Write a random text prompt for DALL·E to generate an image, this prompt will be shown to the user, include details such as the genre and what type of painting it should be, options can include: oil painting, watercolor, photo-realistic, 4k, abstract, modern, black and white etc. Do not wrap the answer in quotes.' }
+            { role: 'user', content: 'Write a random text prompt for DALL·E to generate an image. Be creative and come up with different ideas each time. Do not mention cityscape. This prompt will be shown to the user, include details such as the genre and what type of painting it should be, options can include: oil painting, watercolor, photo-realistic, 4k, abstract, modern, black and white etc. Do not wrap the answer in quotes.' }
         ],
         max_tokens: 100,
-        temperature: 0.9, 
+        temperature: 0.5,
     });
 
     context.log(`Http function processed request for url "${request.url}"`);
